@@ -1,0 +1,10 @@
+---
+applications:
+- name: pcf-routes
+  memory: 512M
+  instances: 1
+  host: pcf-routes-${random-word}
+  path: target/pcf-app-routes-0.0.1-SNAPSHOT.jar
+  buildpack: https://github.com/cloudfoundry/java-buildpack
+  services:
+  - route-credentials
