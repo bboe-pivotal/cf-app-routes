@@ -29,7 +29,6 @@ public class AppRoutesController {
 
     @RequestMapping("/")
     public Map getRoutes() {
-        System.out.printf("AppRoutesController.getRoutes Route path: %s, Username: %s, Password: %s\n", routePath, routeUsername, routePassword);
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> request = new HttpEntity<String>(createHeaders(routeUsername, routePassword));
 
