@@ -3,10 +3,7 @@ Simple tool for displaying the routing table within Cloud Foundry for debugging 
 
 Installation instructions
 1. Log on to Pivotal Ops Mgr to determine the IP address and admin password for the router
-
-
-
-1. Create user provided service with credentials to back-end router service:
+2. Create user provided service with credentials to back-end router service:
 
   ```
   cf create-user-provided-service route-credentials -p '{
@@ -14,4 +11,14 @@ Installation instructions
     "username":"router_status",
     "password":"<password>"
   }'
+  ```
+3. Build the application
+
+  ```
+  ./mvnw package
+  ````
+4. Push the application
+
+  ```
+  cf push
   ```
